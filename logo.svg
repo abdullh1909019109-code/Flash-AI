@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="FLASH AGENT logo">
+  <defs>
+    <linearGradient id="fa-g1" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5AA0FF"/>
+      <stop offset=".5" stop-color="#3D6BFF"/>
+      <stop offset="1" stop-color="#9B5CFF"/>
+    </linearGradient>
+    <linearGradient id="fa-g2" x1="20" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#C9DBFF"/>
+    </linearGradient>
+    <radialGradient id="fa-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#6E8BFF" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#6E8BFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#fa-glow)"/>
+  <!-- hexagonal prism frame -->
+  <path d="M32 3.6 55.6 17.2v27.6L32 58.4 8.4 44.8V17.2L32 3.6Z"
+        fill="none" stroke="url(#fa-g1)" stroke-width="2.6" stroke-linejoin="round" opacity=".95"/>
+  <path d="M32 9.2 50.8 20v22.4L32 53.2 13.2 42.4V20L32 9.2Z"
+        fill="#0B1024" opacity=".85"/>
+  <!-- orbit arc -->
+  <path d="M12 44C20 55 46 57 55 42" fill="none" stroke="#7E6BFF" stroke-width="1.6"
+        stroke-linecap="round" opacity=".65"/>
+  <circle cx="55" cy="42" r="2.4" fill="#B79BFF"/>
+  <!-- bolt -->
+  <path d="M35.8 15 24.5 34.2h6.9L27.9 49l12-20.4h-7.2L35.8 15Z" fill="url(#fa-g2)"/>
+  <!-- spark -->
+  <circle cx="17" cy="24" r="1.8" fill="#6FA6FF" opacity=".9"/>
+</svg>
+

@@ -1,0 +1,16 @@
+{
+  "name": "FLASH AGENT — Your Intelligence. Beyond Limits.",
+  "short_name": "FLASH AGENT",
+  "description": "Advanced AI platform: chat, code, vision, voice and memory.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "icons": [
+    { "src": "/assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/logo-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
+

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#05060d" />
+<meta name="robots" content="noindex, nofollow" />
+<title>FLASH AGENT — Control Center</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="/css/app.css" />
+<link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body class="admin-body">
+<div class="aurora"></div>
+<div class="grid-veil"></div>
+
+<!-- ══════════ ADMIN LOGIN ══════════ -->
+<section id="loginScreen" class="auth-wrap hidden">
+  <div class="auth-card">
+    <div class="logo-row">
+      <img src="/assets/logo.svg" alt="FLASH AGENT" />
+      <h2>CONTROL CENTER</h2>
+      <p class="tag">Administrator access only</p>
+    </div>
+    <form id="adminLogin">
+      <div class="field"><label for="aUser">Username</label><input class="input" id="aUser" autocomplete="username" required></div>
+      <div class="field"><label for="aPass">Password</label><input class="input" id="aPass" type="password" autocomplete="current-password" required></div>
+      <button class="btn primary" style="width:100%" type="submit">Sign in to Control Center</button>
+      <div class="auth-switch"><a href="/" style="color:var(--text-mute);font-size:12px">← Back to the application</a></div>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════ ADMIN SHELL ══════════ -->
+<div id="adminApp" class="admin-shell hidden">
+  <aside class="admin-rail">
+    <div class="brand" style="padding:2px 6px 16px">
+      <img src="/assets/logo.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">FLASH AGENT</span>
+        <span class="brand-sub">Control Center</span>
+      </div>
+    </div>
+    <nav class="rail-nav" id="railNav">
+      <button class="rail-item active" data-view="overview"><span>◈</span>Overview</button>
+      <button class="rail-item" data-view="config"><span>⚙</span>AI Configuration</button>
+      <button class="rail-item" data-view="providers"><span>⇄</span>AI Providers</button>
+      <button class="rail-item" data-view="personality"><span>✦</span>AI Personality</button>
+      <button class="rail-item" data-view="users"><span>☰</span>User Management</button>
+      <button class="rail-item" data-view="analytics"><span>📈</span>Analytics</button>
+      <button class="rail-item" data-view="settings"><span>⚒</span>General Settings</button>
+    </nav>
+    <div class="rail-foot">
+      <div class="user-chip">
+        <div class="avatar" id="adminAvatar">A</div>
+        <div class="user-meta"><b id="adminName">admin</b><span>administrator</span></div>
+      </div>
+      <button class="side-link" id="adminLogout">⤶ Sign out</button>
+      <a class="side-link" href="/" target="_blank" style="text-decoration:none">↗ Open application</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-top">
+      <div>
+        <h1 id="viewTitle">Overview</h1>
+        <p id="viewSub">Live state of the FLASH AGENT platform</p>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn ghost rail-toggle" id="railToggle" title="Menu">☰</button>
+        <span class="pill" id="connPill"><span class="dot"></span><span id="connText">checking…</span></span>
+        <button class="btn" id="refreshBtn">↻ Refresh</button>
+      </div>
+    </header>
+    <div class="admin-scroll" id="adminBody"></div>
+  </main>
+</div>
+
+<div class="toasts" id="toasts"></div>
+<div id="modalRoot"></div>
+<script src="/js/admin.js"></script>
+</body>
+</html>
+
