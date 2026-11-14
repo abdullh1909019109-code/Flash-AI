@@ -1,0 +1,38 @@
+# FLASH AGENT — Fly.io config
+#   fly launch --no-deploy
+#   fly volumes create flash_data --size 1
+#   fly secrets set APP_SECRET=... OPENAI_API_KEY=... ADMIN_INITIAL_PASSWORD=...
+#   fly deploy
+app = "flash-agent"
+primary_region = "cdg"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3000"
+  DATA_DIR = "/app/data"
+  OPENAI_BASE_URL = "https://api.openai.com/v1"
+  OPENAI_MODEL = "gpt-4o-mini"
+  ADMIN_USERNAME = "admin"
+  ALLOW_REGISTRATION = "true"
+
+[[mounts]]
+  source = "flash_data"
+  destination = "/app/data"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[http_service.checks]]
+  interval = "30s"
+  timeout = "5s"
+  grace_period = "15s"
+  method = "GET"
+  path = "/api/health"
+
