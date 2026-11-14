@@ -1,0 +1,22 @@
+[Unit]
+Description=FLASH AGENT — AI platform
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=flash
+WorkingDirectory=/opt/flash-agent
+EnvironmentFile=/opt/flash-agent/.env
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node server/index.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/flash-agent/data
+
+[Install]
+WantedBy=multi-user.target
+
